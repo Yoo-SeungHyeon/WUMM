@@ -1,4 +1,6 @@
 __pycache__/
 .venv/
 *.db
-*.sepc
+*.spec
+build/
+dist/
