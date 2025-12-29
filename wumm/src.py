@@ -53,7 +53,7 @@ def _build_email(
         reason = resend_reason or "첨부 오류로 인한 재송부"
         content = (
             f"안녕하십니까, {cardinal_number}기 {location} 실습코치 {name}입니다.\n\n"
-            f"{month}월 {day}일({day_of_week}) {nth_day}일차 Wrap Up보고서를 {reason} 사유로 재송부드립니다.\n\n"
+            f"{month}월 {day}일({day_of_week}) {nth_day}일차 Wrap Up보고서 {reason} 재송부드립니다.\n\n"
             "특이사항\n"
             "- 해당 사항 없음.\n\n"
             "감사합니다.\n"
@@ -63,7 +63,7 @@ def _build_email(
         title = f"{base_subject} 송부"
         content = (
             f"안녕하십니까, {cardinal_number}기 {location} 실습코치 {name}입니다.\n\n"
-            f"{month}월 {day}일({day_of_week}) {nth_day}일차 Wrap Up 보고서를 첨부하여 송부드립니다.\n\n"
+            f"{month}월 {day}일({day_of_week}) {nth_day}일차 Wrap Up 보고서 첨부파일로 송부 드립니다.\n\n"
             "특이사항\n"
             "- 해당 사항 없음.\n\n"
             "감사합니다.\n"
@@ -173,13 +173,13 @@ def main() -> None:
     main_frame.grid(row=0, column=0, sticky="nsew")
 
     ttk.Label(main_frame, text="기수").grid(row=0, column=0, sticky="w")
-    cardinal_var = tk.StringVar(value="0")
+    cardinal_var = tk.StringVar(value="14")
     ttk.Spinbox(main_frame, from_=0, to=99, textvariable=cardinal_var, width=6).grid(
         row=0, column=1, sticky="we", padx=(8, 16)
     )
 
     ttk.Label(main_frame, text="지역").grid(row=0, column=2, sticky="w")
-    location_var = tk.StringVar(value=LOCATION_OPTIONS[0])
+    location_var = tk.StringVar(value=LOCATION_OPTIONS[1])
     ttk.Combobox(
         main_frame,
         values=LOCATION_OPTIONS,
